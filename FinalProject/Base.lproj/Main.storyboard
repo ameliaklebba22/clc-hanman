@@ -539,12 +539,12 @@
                     <viewLayoutGuide key="safeArea" id="vR5-eL-VYR"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="674" y="860"/>
+            <point key="canvasLocation" x="649" y="860"/>
         </scene>
         <!--leaderboard-->
         <scene sceneID="1oZ-g4-aeW">
             <objects>
-                <viewController id="f2z-om-pAU" sceneMemberID="viewController">
+                <viewController id="f2z-om-pAU" customClass="LeaderboardViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TgQ-oA-WB4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -579,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMV-8o-efk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381.1594202898552" y="862.5"/>
+            <point key="canvasLocation" x="1288" y="860"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Dr2-aH-Kn9">
@@ -606,7 +606,7 @@
     <resources>
         <image name="blank" width="1920" height="1080"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
-        <image name="house" catalog="system" width="32" height="32"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="howToPlayHangman" width="376" height="376"/>
         <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
         <image name="pole" width="1734" height="3046"/>
