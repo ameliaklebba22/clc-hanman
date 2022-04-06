@@ -28,13 +28,10 @@ class GameController: UIViewController {
     @IBOutlet weak var xoutlet: UIButton!
     @IBOutlet weak var youtlet: UIButton!
     @IBOutlet weak var zoutlet: UIButton!
-    @IBOutlet weak var dabloonLabel: UILabel!
-    
-    
     
     let bruh = MasterClass.init()
     var audioPlayer: AVAudioPlayer?
-    
+    var people: [String] = []
     var defaultImage: [UIImage] = [
         UIImage(named: "Default1")!,
         UIImage(named: "Default2")!,
@@ -42,34 +39,7 @@ class GameController: UIViewController {
         UIImage(named: "Default4")!
     ]
     
-    var carlImage: [UIImage] = [
-        UIImage(named: "Carl1")!,
-        UIImage(named: "Carl2")!,
-        UIImage(named: "Carl3")!,
-        UIImage(named: "Carl4")!
-    ]
-    
-    var rockImage: [UIImage] = [
-        UIImage(named: "Dwayne1")!,
-        UIImage(named: "Dwayne2")!,
-        UIImage(named: "Dwayne3")!,
-        UIImage(named: "Dwayne4")!
-    ]
-    
-    
-    var dripSeaver: [UIImage] = [
-        UIImage(named: "DripSeaver1")!,
-        UIImage(named: "DripSeaver2")!,
-        UIImage(named: "DripSeaver3")!,
-        UIImage(named: "DripSeaver4")!
-    ]
-    
-    var imposter: [UIImage] = [
-        UIImage(named: "Imposter1")!,
-        UIImage(named: "Imposter2")!,
-        UIImage(named: "Imposter3")!,
-        UIImage(named: "Imposter4")!
-    ]
+   
     
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var guessLabel: UILabel!
@@ -88,7 +58,6 @@ class GameController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         print("view appearing")
-        dabloonLabel.text = "\(bruh.returnCurrency()) DABLOONS™"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -782,14 +751,32 @@ class GameController: UIViewController {
       
     //winning alert
     func alertMoment(){
-        bruh.updateCurrency(count: chosen.count)
-        let epic = UIAlertController(title: "You Got the Word Right!", message: "You've Earned \(bruh.returnUpdatedCurrency(count: chosen.count)) DABLOONS™" , preferredStyle: .alert)
-        let gamer = UIAlertAction(title: "Thanks Puff Daddy", style: .default, handler: nil)
-        epic.addAction(gamer)
-        present(epic, animated: true, completion: nil)
-        dabloonLabel.text = "\(bruh.returnCurrency()) DABLOONS™"
-        resetScreen()
+        let alert = UIAlertController(title: "You Win!", message: "Enter your name to send score to global leader board.", preferredStyle: .alert);            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Send", style: .default, handler: { [self] ale in
+                guard let fields = alert.textFields, fields.count == 1 else{
+                return
+                }
+                let person = fields[0]
+                people.append(person.text!)
+            }))
+        
+        
+        alert.addTextField { field in
+        field.placeholder = "name"
+        field.returnKeyType = .next
+        field.keyboardType = .default
         }
+        present(alert, animated: true)
+        resetScreen()
+        
+        }
+        
+    
+    
+    
+    
+    
+    
     
     func otherAlertMoment(){
         let epic = UIAlertController(title: "You Got the Word WRONG", message: "You've earned no DABLOONS™ :(" , preferredStyle: .alert)
@@ -850,36 +837,10 @@ class GameController: UIViewController {
         var hello = MasterClass.character
         print(MasterClass.character)
         print("printed var")
-        switch hello {
-        case 0:
         if wrongg == 5{}
-        else { var imagee = defaultImage[wrongg - 1]
-        personImage.image = imagee
-        }
-        case 1:
-        if wrongg == 5 {}
         else {
-        var imageee = carlImage[wrongg - 1]
-        personImage.image = imageee
-        }
-        case 2:
-        if wrongg == 5{}
-        else{
-        var imageeee = rockImage[wrongg - 1]
-        personImage.image = imageeee
-        }
-        case 3:
-        if wrongg == 5 {}
-        else{ var imagq = imposter[wrongg - 1]
-        personImage.image = imagq
-        }
-        case 4:
-        if wrongg == 5{}
-        else{ var imagi = dripSeaver[wrongg - 1]
-        personImage.image = imagi
-        }
-        default:
-        print("Some other character")
+        var imagee = defaultImage[wrongg - 1]
+        personImage.image = imagee
         }
     }
            
