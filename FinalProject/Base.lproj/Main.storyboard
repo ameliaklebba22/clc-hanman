@@ -540,7 +540,7 @@
         <!--leaderboard-->
         <scene sceneID="1oZ-g4-aeW">
             <objects>
-                <viewController id="f2z-om-pAU" sceneMemberID="viewController">
+                <viewController id="f2z-om-pAU" customClass="LeaderboardViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TgQ-oA-WB4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
