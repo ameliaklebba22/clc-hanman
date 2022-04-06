@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24C9647B27FDC14C00F5337F /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C9647A27FDC14C00F5337F /* LeaderboardViewController.swift */; };
+		24C9647D27FDC85A00F5337F /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C9647C27FDC85A00F5337F /* PlayerScore.swift */; };
 		5922BBD82755565E0029079E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5922BBD72755565E0029079E /* AppDelegate.swift */; };
 		5922BBDA2755565E0029079E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5922BBD92755565E0029079E /* SceneDelegate.swift */; };
 		5922BBDC2755565E0029079E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5922BBDB2755565E0029079E /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		24C9647A27FDC14C00F5337F /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		24C9647C27FDC85A00F5337F /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
 		5922BBD42755565E0029079E /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5922BBD72755565E0029079E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5922BBD92755565E0029079E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				5922BBD92755565E0029079E /* SceneDelegate.swift */,
 				5922BBDD2755565E0029079E /* Main.storyboard */,
 				24C9647A27FDC14C00F5337F /* LeaderboardViewController.swift */,
+				24C9647C27FDC85A00F5337F /* PlayerScore.swift */,
 				5922BBDB2755565E0029079E /* ViewController.swift */,
 				5922BC1227555A830029079E /* HowToPlayController.swift */,
 				5922BC1427555A980029079E /* GameController.swift */,
@@ -307,6 +310,7 @@
 				5922BBD82755565E0029079E /* AppDelegate.swift in Sources */,
 				5922BBE22755565E0029079E /* FinalProject.xcdatamodeld in Sources */,
 				592888012757F8490011F42F /* CustomCell.swift in Sources */,
+				24C9647D27FDC85A00F5337F /* PlayerScore.swift in Sources */,
 				59FFFC3A275824A700E1CD7A /* MasterClass.swift in Sources */,
 				5922BBDA2755565E0029079E /* SceneDelegate.swift in Sources */,
 			);
