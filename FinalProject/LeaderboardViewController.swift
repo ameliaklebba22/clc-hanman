@@ -6,7 +6,7 @@ import UIKit
 
 class LeaderboardViewController: UIViewController {
 
-    
+    var highScores : [PlayerScore] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
