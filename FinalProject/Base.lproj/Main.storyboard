@@ -602,7 +602,7 @@
     <resources>
         <image name="blank" width="1920" height="1080"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
-        <image name="house" catalog="system" width="32" height="32"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="howToPlayHangman" width="376" height="376"/>
         <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
         <image name="pole" width="1734" height="3046"/>
