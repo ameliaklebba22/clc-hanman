@@ -54,21 +54,8 @@ class GameController: UIViewController {
        var put = [String]()
        var wrong = 0
        var correct = 0
-       //var inString = ""
 
-    override func viewWillAppear(_ animated: Bool) {
-        print("view appearing")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("view disappearing")
-        bruh.updateCurrency(count: 0)
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(bruh.returnCurrency()){
-            UserDefaults.standard.set(encoded, forKey: "Money3")
-    }
-    }
-    
+   
        override func viewDidLoad() {
        super.viewDidLoad()
            var num = Int.random(in: 0..<wordBank.count)
@@ -88,15 +75,9 @@ class GameController: UIViewController {
            o = o + 1
            }
            guessLabel.text = setup
-           
-           if let money = UserDefaults.standard.data(forKey: "Money3"){
-               let decoder = JSONDecoder()
-               if let decoded = try? decoder.decode(Int.self, from: money){
-                   bruh.saveData(saved: decoded)
-               }
-           }    
            }
        
+    
        @IBAction func abutton(_ sender: UIButton) {
            print("hello")
            var col  = false
@@ -747,7 +728,7 @@ class GameController: UIViewController {
            callLoss()
        }
        
-      //=======================functions==========================================
+//=======================functions==========================================
       
     //winning alert
     func alertMoment(){
@@ -779,8 +760,8 @@ class GameController: UIViewController {
     
     
     func otherAlertMoment(){
-        let epic = UIAlertController(title: "You Got the Word WRONG", message: "You've earned no DABLOONS™ :(" , preferredStyle: .alert)
-        let gamer = UIAlertAction(title: "Try again..? :////", style: .default, handler: nil)
+        let epic = UIAlertController(title: "You got the word wrong.", message: "You didn't guess the word. The word was \(chosen) wait untill tomrrow to try again! " , preferredStyle: .alert)
+        let gamer = UIAlertAction(title: "Okay", style: .default, handler: nil)
         epic.addAction(gamer)
         present(epic, animated: true, completion: nil)
         resetScreen()
@@ -788,7 +769,6 @@ class GameController: UIViewController {
     
     
       //making array of characters
-      
       func makeArray(wow: String){
           var g = 0
           for character in wow{
