@@ -43,6 +43,9 @@ class GameController: UIViewController {
     
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var guessLabel: UILabel!
+    var timeRemaning: Int = 30
+    var timer: Timer!
+
     
     var wordBank = ["lake","central","south","seaver","squirrel", "crystal","school","downtown","cottage","veterans", "amelia","ben","fourteen","canes","illinois","tigers", "football","clubs","community","chicago","orange","jason","parade","raue","firework"]
     
@@ -75,8 +78,26 @@ class GameController: UIViewController {
            o = o + 1
            }
            guessLabel.text = setup
+           
            }
        
+    override func viewDidAppear(_ animated: Bool) {
+    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(step), userInfo: nil, repeats: true)
+    
+    }
+    
+    @objc func step(){
+        if timeRemaning > 0 {
+        timeRemaning -= 1
+        }
+        if timeRemaning == 0{
+        timer.invalidate()
+    
+        }
+    }
+    
+    
+    
     
        @IBAction func abutton(_ sender: UIButton) {
            print("hello")
@@ -849,33 +870,32 @@ class GameController: UIViewController {
         }
         guessLabel.text = setup
         personImage.image = UIImage(named: "blank")
-        var newColor = UIColor.init(red: 1, green: 0.846, blue: 0.979, alpha: 1)
-        aoutlet.backgroundColor = newColor
-        boutlet.backgroundColor = newColor
-        coutlet.backgroundColor = newColor
-        doutlet.backgroundColor = newColor
-        eoutlet.backgroundColor = newColor
-        foutlet.backgroundColor = newColor
-        goutlet.backgroundColor = newColor
-        houtlet.backgroundColor = newColor
-        ioutlet.backgroundColor = newColor
-        joutlet.backgroundColor = newColor
-        koutlet.backgroundColor = newColor
-        loutlet.backgroundColor = newColor
-        moulet.backgroundColor = newColor
-        noutlet.backgroundColor = newColor
-        ooutlet.backgroundColor = newColor
-        poutlet.backgroundColor = newColor
-        qoutlet.backgroundColor = newColor
-        routlet.backgroundColor = newColor
-        soutlet.backgroundColor = newColor
-        toutlet.backgroundColor = newColor
-        uoutlet.backgroundColor = newColor
-        voulet.backgroundColor = newColor
-        woutlet.backgroundColor = newColor
-        xoutlet.backgroundColor = newColor
-        youtlet.backgroundColor = newColor
-        zoutlet.backgroundColor = newColor
+        aoutlet.backgroundColor = UIColor.black
+        boutlet.backgroundColor = UIColor.black
+        coutlet.backgroundColor = UIColor.black
+        doutlet.backgroundColor = UIColor.black
+        eoutlet.backgroundColor = UIColor.black
+        foutlet.backgroundColor = UIColor.black
+        goutlet.backgroundColor = UIColor.black
+        houtlet.backgroundColor = UIColor.black
+        ioutlet.backgroundColor = UIColor.black
+        joutlet.backgroundColor = UIColor.black
+        koutlet.backgroundColor = UIColor.black
+        loutlet.backgroundColor = UIColor.black
+        moulet.backgroundColor = UIColor.black
+        noutlet.backgroundColor = UIColor.black
+        ooutlet.backgroundColor = UIColor.black
+        poutlet.backgroundColor = UIColor.black
+        qoutlet.backgroundColor = UIColor.black
+        routlet.backgroundColor = UIColor.black
+        soutlet.backgroundColor = UIColor.black
+        toutlet.backgroundColor = UIColor.black
+        uoutlet.backgroundColor = UIColor.black
+        voulet.backgroundColor = UIColor.black
+        woutlet.backgroundColor = UIColor.black
+        xoutlet.backgroundColor = UIColor.black
+        youtlet.backgroundColor = UIColor.black
+        zoutlet.backgroundColor = UIColor.black
     }
     
     //sound functions
