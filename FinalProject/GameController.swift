@@ -2,6 +2,8 @@ import UIKit
 import AVFoundation
 class GameController: UIViewController {
     
+    
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var aoutlet: UIButton!
     @IBOutlet weak var boutlet: UIButton!
     @IBOutlet weak var coutlet: UIButton!
@@ -28,10 +30,10 @@ class GameController: UIViewController {
     @IBOutlet weak var xoutlet: UIButton!
     @IBOutlet weak var youtlet: UIButton!
     @IBOutlet weak var zoutlet: UIButton!
-    
+    var total = 0
     let bruh = MasterClass.init()
     var audioPlayer: AVAudioPlayer?
-    var people: [String] = []
+    static var people: [String] = []
     var defaultImage: [UIImage] = [
         UIImage(named: "Default1")!,
         UIImage(named: "Default2")!,
@@ -759,7 +761,7 @@ class GameController: UIViewController {
                 return
                 }
                 let person = fields[0]
-                people.append(person.text!)
+                GameController.people.append(person.text!)
             }))
         
         
@@ -822,6 +824,8 @@ class GameController: UIViewController {
         print(correct)
         print(chosen.count)
         if correct == chosen.count{
+        total = total + 1
+        scoreLabel.text = String(total)
         alertMoment()
         }
     }

@@ -12,5 +12,6 @@ public class PlayerScore{
         
         self.player = player
         self.time = time
+        
     }
 }
