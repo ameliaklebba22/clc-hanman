@@ -22,6 +22,15 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
         
+       // self.tableView.reloadData()
+
+        
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableViewOutlet.reloadData()
+        
         
         
     }
@@ -30,11 +39,9 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        //tableView.reloadData()
         return highScores.count
         
     }
@@ -44,6 +51,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         cell.textLabel?.text = highScores[indexPath.row].player
         cell.detailTextLabel?.text = String(highScores[indexPath.row].time)
         
+        //tableView.reloadData()
         return cell
         
         
