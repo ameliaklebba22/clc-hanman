@@ -24,13 +24,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="retroTiger" translatesAutoresizingMaskIntoConstraints="NO" id="bfI-mz-t9v">
-                                <rect key="frame" x="20" y="263" width="374" height="530"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cool" translatesAutoresizingMaskIntoConstraints="NO" id="bfI-mz-t9v">
+                                <rect key="frame" x="20" y="272" width="374" height="403"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="1" green="0.61820916290000005" blue="0.36654551950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.54552355350000004" blue="0.2855485995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Gfz-dU-2FB" appends="YES" id="DsS-9i-Muo"/>
@@ -72,7 +72,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pun-KD-XMk"/>
-                        <color key="backgroundColor" red="1" green="0.61820916290000005" blue="0.36654551950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.54552355350000004" blue="0.2855485995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="How To Play" image="questionmark.app" catalog="system" id="9t5-sv-Zdu"/>
                 </viewController>
@@ -96,10 +96,6 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.72734609399874184" green="0.37348252619326849" blue="0.018352289185775778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="lPo-gL-M8E">
-                                <rect key="frame" x="208" y="462" width="128" height="208"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pole" translatesAutoresizingMaskIntoConstraints="NO" id="6f2-X4-9t4">
                                 <rect key="frame" x="20" y="339" width="374" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -411,17 +407,20 @@
                                                     <action selector="zbutton:" destination="pmt-tj-brh" eventType="touchUpInside" id="5YM-JL-xQX"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bci-HA-fBr">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bci-HA-fBr">
                                                 <rect key="frame" x="241.66666666666671" y="0.0" width="36.333333333333343" height="31"/>
-                                                <color key="backgroundColor" red="1" green="0.61820916290000005" blue="0.36654551950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="tintColor" red="1" green="0.61820916290000005" blue="0.36654551950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="."/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                <connections>
+                                                    <action selector="spaceButton:" destination="pmt-tj-brh" eventType="touchUpInside" id="OFJ-tw-CF3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf7-g7-TDk">
                                                 <rect key="frame" x="290" y="0.0" width="36.333333333333314" height="31"/>
-                                                <color key="backgroundColor" red="1" green="0.61820916290000005" blue="0.36654551950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <color key="tintColor" red="1" green="0.61820916290000005" blue="0.36654551950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="1" green="0.54552355350000004" blue="0.2855485995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" red="1" green="0.54552355350000004" blue="0.2855485995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="."/>
                                             </button>
@@ -437,7 +436,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rbb-U2-lOZ"/>
-                        <color key="backgroundColor" red="1" green="0.61820916292125672" blue="0.36654551946292346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.54552355348514769" blue="0.28554859954276424" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="EuG-hv-EbA" firstAttribute="top" secondItem="rbb-U2-lOZ" secondAttribute="top" id="6US-JU-leb"/>
                             <constraint firstItem="rbb-U2-lOZ" firstAttribute="trailing" secondItem="24M-0r-95H" secondAttribute="trailing" constant="43.670000000000002" id="9k8-G3-gOW"/>
@@ -467,12 +466,13 @@
                         <outlet property="moulet" destination="Awr-Y1-fOh" id="PHJ-b1-9c1"/>
                         <outlet property="noutlet" destination="67C-Uj-YWv" id="DFs-jf-2E6"/>
                         <outlet property="ooutlet" destination="TIn-1J-DAJ" id="yKG-x4-bNY"/>
-                        <outlet property="personImage" destination="lPo-gL-M8E" id="gqu-m3-dKS"/>
+                        <outlet property="poleOutletFun" destination="6f2-X4-9t4" id="KgV-Wb-jsb"/>
                         <outlet property="poutlet" destination="a6h-E1-F1U" id="J87-jo-W0s"/>
                         <outlet property="qoutlet" destination="dKk-sJ-N0P" id="LqV-Yo-DKN"/>
                         <outlet property="routlet" destination="2G5-5a-auw" id="KNN-Pu-ydT"/>
                         <outlet property="scoreLabel" destination="EuG-hv-EbA" id="rUY-0U-BEz"/>
                         <outlet property="soutlet" destination="Gp3-dT-mD2" id="SBK-NN-k2F"/>
+                        <outlet property="spaceOutlet" destination="Bci-HA-fBr" id="m29-Fl-aEq"/>
                         <outlet property="toutlet" destination="wml-Sm-fTw" id="iZw-DI-sid"/>
                         <outlet property="uoutlet" destination="IrS-rH-jdg" id="T0d-W3-MAv"/>
                         <outlet property="voulet" destination="FBt-ka-ZSH" id="cZo-gM-onR"/>
@@ -588,16 +588,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily Leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngQ-kj-AAp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngQ-kj-AAp">
                                 <rect key="frame" x="20" y="77" width="374" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eUa-MZ-7fp"/>
-                        <color key="backgroundColor" red="1" green="0.61820916290000005" blue="0.36654551950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.54552355350000004" blue="0.2855485995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="leaderboard" image="person.crop.square.fill" catalog="system" id="JRi-V4-V2o"/>
                     <connections>
@@ -631,14 +631,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blank" width="1920" height="1080"/>
+        <image name="cool" width="1279" height="1267"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="howToPlayHangman" width="376" height="376"/>
         <image name="person.crop.square.fill" catalog="system" width="128" height="114"/>
         <image name="pole" width="1734" height="3046"/>
         <image name="questionmark.app" catalog="system" width="128" height="114"/>
-        <image name="retroTiger" width="839" height="720"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>630109416333-fi0g81ghdbej4i14l89j0tm655c209k9.apps.googleusercontent.com</string>
+	<string>439059154528-163s7af4s57bl6356sup909bl767oru2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.630109416333-fi0g81ghdbej4i14l89j0tm655c209k9</string>
+	<string>com.googleusercontent.apps.439059154528-163s7af4s57bl6356sup909bl767oru2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAaWeDCV5VPn81EXD90DJC0TFkT1oWYc0o</string>
+	<string>AIzaSyBAfgSXY1LOYbXlI4oADO3NLAOqDdJpEJE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>630109416333</string>
+	<string>439059154528</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>CLC.hangman</string>
 	<key>PROJECT_ID</key>
-	<string>hangmanapp-e64ca</string>
+	<string>hangmanapp-d5696</string>
 	<key>STORAGE_BUCKET</key>
-	<string>hangmanapp-e64ca.appspot.com</string>
+	<string>hangmanapp-d5696.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:630109416333:ios:c934ea3d995d2865506bc4</string>
+	<string>1:439059154528:ios:cca700c6fc2eb09fd9a505</string>
 </dict>
 </plist>

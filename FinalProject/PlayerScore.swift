@@ -6,9 +6,9 @@ import Foundation
 public class PlayerScore{
     
     var player : String
-    var time : Double
+    var time : Int
     
-    init(player: String,time: Double){
+    init(player: String,time: Int){
         
         self.player = player
         self.time = time

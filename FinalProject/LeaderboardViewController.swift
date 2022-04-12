@@ -17,7 +17,7 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
         
         var x = 0
         while x < GameController.people.count{
-        highScores.append(PlayerScore.init(player: GameController.people[x], time: 1))
+            highScores.append(PlayerScore.init(player: GameController.people[x], time: GameController.scores[x]))
             x = x + 1
             
         }

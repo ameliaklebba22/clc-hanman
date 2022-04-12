@@ -29,7 +29,12 @@
 		59F1BD182760E56600C8FC46 /* Sheesh - Tik Tok Audio Sound Effect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59F1BD172760E56500C8FC46 /* Sheesh - Tik Tok Audio Sound Effect.mp3 */; };
 		59FFFC3A275824A700E1CD7A /* MasterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FFFC39275824A700E1CD7A /* MasterClass.swift */; };
 		59FFFC3E27583D3E00E1CD7A /* trollface-smile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59FFFC3D27583D3D00E1CD7A /* trollface-smile.mp3 */; };
-		6EEE5CE92804525D0031B4B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EEE5CE82804525D0031B4B9 /* GoogleService-Info.plist */; };
+		6E5E18572804DF7B00B3789C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E5E18562804DF7B00B3789C /* GoogleService-Info.plist */; };
+		6EEE5CF0280461340031B4B9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE5CEF280461340031B4B9 /* FirebaseAnalytics */; };
+		6EEE5CF2280461340031B4B9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE5CF1280461340031B4B9 /* FirebaseAuth */; };
+		6EEE5CF4280461340031B4B9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE5CF3280461340031B4B9 /* FirebaseDatabase */; };
+		6EEE5CF6280461340031B4B9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE5CF5280461340031B4B9 /* FirebaseFirestore */; };
+		6EEE5CF8280461340031B4B9 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE5CF7280461340031B4B9 /* FirebaseFirestoreSwift-Beta */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +81,7 @@
 		59F1BD172760E56500C8FC46 /* Sheesh - Tik Tok Audio Sound Effect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sheesh - Tik Tok Audio Sound Effect.mp3"; sourceTree = "<group>"; };
 		59FFFC39275824A700E1CD7A /* MasterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterClass.swift; sourceTree = "<group>"; };
 		59FFFC3D27583D3D00E1CD7A /* trollface-smile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "trollface-smile.mp3"; sourceTree = "<group>"; };
-		6EEE5CE82804525D0031B4B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E5E18562804DF7B00B3789C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEE5CF4280461340031B4B9 /* FirebaseDatabase in Frameworks */,
+				6EEE5CF6280461340031B4B9 /* FirebaseFirestore in Frameworks */,
+				6EEE5CF8280461340031B4B9 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				6EEE5CF0280461340031B4B9 /* FirebaseAnalytics in Frameworks */,
+				6EEE5CF2280461340031B4B9 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +149,7 @@
 				5922BBE3275556600029079E /* Assets.xcassets */,
 				592888002757F8490011F42F /* CustomCell.swift */,
 				59FFFC39275824A700E1CD7A /* MasterClass.swift */,
-				6EEE5CE82804525D0031B4B9 /* GoogleService-Info.plist */,
+				6E5E18562804DF7B00B3789C /* GoogleService-Info.plist */,
 				5922BBE5275556600029079E /* LaunchScreen.storyboard */,
 				5922BBE8275556600029079E /* Info.plist */,
 				5922BBE02755565E0029079E /* FinalProject.xcdatamodeld */,
@@ -185,6 +195,13 @@
 			dependencies = (
 			);
 			name = FinalProject;
+			packageProductDependencies = (
+				6EEE5CEF280461340031B4B9 /* FirebaseAnalytics */,
+				6EEE5CF1280461340031B4B9 /* FirebaseAuth */,
+				6EEE5CF3280461340031B4B9 /* FirebaseDatabase */,
+				6EEE5CF5280461340031B4B9 /* FirebaseFirestore */,
+				6EEE5CF7280461340031B4B9 /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = FinalProject;
 			productReference = 5922BBD42755565E0029079E /* FinalProject.app */;
 			productType = "com.apple.product-type.application";
@@ -257,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 5922BBCB2755565E0029079E;
+			packageReferences = (
+				6EEE5CEE280461340031B4B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5922BBD52755565E0029079E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,9 +293,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5E18572804DF7B00B3789C /* GoogleService-Info.plist in Resources */,
 				59F1BD182760E56600C8FC46 /* Sheesh - Tik Tok Audio Sound Effect.mp3 in Resources */,
 				59FFFC3E27583D3E00E1CD7A /* trollface-smile.mp3 in Resources */,
-				6EEE5CE92804525D0031B4B9 /* GoogleService-Info.plist in Resources */,
 				59EFC8BA275A58E500E29408 /* donald-trump-wrong-sound-effect.mp3 in Resources */,
 				5922BBE7275556600029079E /* LaunchScreen.storyboard in Resources */,
 				59EFC8BC275A58F300E29408 /* mr-krabs.mp3 in Resources */,
@@ -684,6 +704,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6EEE5CEE280461340031B4B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 8.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6EEE5CEF280461340031B4B9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EEE5CEE280461340031B4B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		6EEE5CF1280461340031B4B9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EEE5CEE280461340031B4B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6EEE5CF3280461340031B4B9 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EEE5CEE280461340031B4B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		6EEE5CF5280461340031B4B9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EEE5CEE280461340031B4B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		6EEE5CF7280461340031B4B9 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EEE5CEE280461340031B4B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5922BBE02755565E0029079E /* FinalProject.xcdatamodeld */ = {

@@ -1,5 +1,7 @@
 import UIKit
 import AVFoundation
+import Firebase
+import FirebaseFirestoreSwift
 class GameController: UIViewController {
     
     
@@ -28,12 +30,19 @@ class GameController: UIViewController {
     @IBOutlet weak var voulet: UIButton!
     @IBOutlet weak var woutlet: UIButton!
     @IBOutlet weak var xoutlet: UIButton!
+    
+    @IBOutlet weak var spaceOutlet: UIButton!
     @IBOutlet weak var youtlet: UIButton!
     @IBOutlet weak var zoutlet: UIButton!
     var total = 0
+    
+    @IBOutlet weak var poleOutletFun: UIImageView!
+    
     let bruh = MasterClass.init()
     var audioPlayer: AVAudioPlayer?
+    let database = Firestore.firestore()
     static var people: [String] = []
+    static var scores: [Int] = []
     var defaultImage: [UIImage] = [
         UIImage(named: "Default1")!,
         UIImage(named: "Default2")!,
@@ -41,15 +50,16 @@ class GameController: UIViewController {
         UIImage(named: "Default4")!
     ]
     
-   
     
-    @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var guessLabel: UILabel!
     var timeRemaning: Int = 30
     var timer: Timer!
 
     
-    var wordBank = ["lake","central","south","seaver","squirrel", "crystal","school","downtown","cottage","veterans", "amelia","ben","fourteen","canes","illinois","tigers", "football","clubs","community","chicago","orange","jason","parade","raue","firework"]
+    var wordBank: [String] = []
+    
+    var WORDS: [String] = ["central","orange", "black", "tigers", "crystal lake", "south smells", "tiger pride", "football", "volleyball", "basketball", "baseball", "softball", "wrestling", "ben", "amelia", "brent", "activity pass", "veterans acres", "lipold park", "spirit", "squirrel", "innovative", "the freeze", "downtown", "the cottage", "ra ra ra"]
+
     
        var special = [Character]()
        var chosen = "final"
@@ -63,29 +73,61 @@ class GameController: UIViewController {
    
        override func viewDidLoad() {
        super.viewDidLoad()
-           var num = Int.random(in: 0..<wordBank.count)
-           chosen = wordBank[num]
-           print("this is the word")
-           print(chosen)
-           makeArray(wow: chosen)
-           var t = 0
-           while t < special.count{
-           put.append(" _ ")
-           t = t + 1
-           }
-           var setup = ""
-           var o = 0
-           while o < put.count{
-           setup = setup + put[o]
-           o = o + 1
-           }
-           guessLabel.text = setup
            
+           
+//           let peopleRef = database.document("word/words")
+//           peopleRef.updateData(["allWords": WORDS])
+           
+           
+           
+           
+           let docRef = database.document("word/words")
+           docRef.getDocument { snapshot, error in
+           guard let data = snapshot?.data(), error == nil else{
+           return
+           }
+           guard let wordBankk = data["allWords"] as? [String] else {
+           return
+           }
+               self.wordBank = wordBankk
+               self.settingUp()
+           }
            }
        
+    
+    func settingUp(){
+        
+        var num = Int.random(in: 0..<wordBank.count)
+        chosen = wordBank[num]
+        print("this is the word")
+        print(chosen)
+        makeArray(wow: chosen)
+        var t = 0
+        while t < special.count{
+        put.append(" _ ")
+        t = t + 1
+        }
+        var setup = ""
+        var o = 0
+        while o < put.count{
+        setup = setup + put[o]
+        o = o + 1
+        }
+        guessLabel.text = setup
+
+       
+        
+    }
+    
+    
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(step), userInfo: nil, repeats: true)
     
+        
+        
     }
     
     @objc func step(){
@@ -101,8 +143,40 @@ class GameController: UIViewController {
     
     
     
+    
+    @IBAction func spaceButton(_ sender: Any) {
+        
+        var col  = false
+        var loopAmt = 0
+        for poo in special{
+        if poo == " "{
+        col = true
+        updateGuess(guess: " ", spot: loopAmt)
+        }
+        loopAmt = loopAmt + 1
+        }
+        if col == true{
+        spaceOutlet.backgroundColor = UIColor.green
+        guesses = guesses + 1
+        daBabyMoment()
+        }
+        else{
+        spaceOutlet.backgroundColor = UIColor.red
+        wrong = wrong + 1
+        changePerson(wrongg: wrong)
+        trumpMoment()
+        }
+        callWin()
+        callLoss()
+        
+    }
+    
+    
        @IBAction func abutton(_ sender: UIButton) {
-           print("hello")
+           
+//           let scoreRef = database.document("word/words")
+//           scoreRef.setData(["allWords": wordBank])
+//           print("hello")
            var col  = false
            var loopAmt = 0
            for poo in special{
@@ -120,10 +194,15 @@ class GameController: UIViewController {
            else{
            aoutlet.backgroundColor = UIColor.red
            wrong = wrong + 1
+           changePerson(wrongg: wrong)
            trumpMoment()
            }
            callWin()
            callLoss()
+           
+        
+        
+           
        }
        
        @IBAction func bbutton(_ sender: Any) {
@@ -825,6 +904,7 @@ class GameController: UIViewController {
         print(chosen.count)
         if correct == chosen.count{
         total = total + 1
+        GameController.scores.append(total)
         scoreLabel.text = String(total)
         alertMoment()
         }
@@ -845,13 +925,14 @@ class GameController: UIViewController {
         if wrongg == 5{}
         else {
         var imagee = defaultImage[wrongg - 1]
-        personImage.image = imagee
+        poleOutletFun.image = imagee
         }
     }
            
     //reseting screen, wip!
     func resetScreen(){
         var num = Int.random(in: 0..<wordBank.count)
+        poleOutletFun.image = UIImage(named: "pole")
         chosen = wordBank[num]
         print("this is the word")
         print(chosen)
@@ -873,7 +954,7 @@ class GameController: UIViewController {
         o = o + 1
         }
         guessLabel.text = setup
-        personImage.image = UIImage(named: "blank")
+//        poleOutletFun.image = UIImage(named: "blank")
         aoutlet.backgroundColor = UIColor.black
         boutlet.backgroundColor = UIColor.black
         coutlet.backgroundColor = UIColor.black
@@ -900,6 +981,7 @@ class GameController: UIViewController {
         xoutlet.backgroundColor = UIColor.black
         youtlet.backgroundColor = UIColor.black
         zoutlet.backgroundColor = UIColor.black
+        spaceOutlet.backgroundColor = UIColor.black
     }
     
     //sound functions
