@@ -30,6 +30,9 @@
 		59FFFC3A275824A700E1CD7A /* MasterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FFFC39275824A700E1CD7A /* MasterClass.swift */; };
 		59FFFC3E27583D3E00E1CD7A /* trollface-smile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59FFFC3D27583D3D00E1CD7A /* trollface-smile.mp3 */; };
 		6E5E18572804DF7B00B3789C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E5E18562804DF7B00B3789C /* GoogleService-Info.plist */; };
+		6E5E18592805AD4900B3789C /* CrazyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E18582805AD4900B3789C /* CrazyCell.swift */; };
+		6E5E185B2805AE9200B3789C /* personalLeaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E185A2805AE9200B3789C /* personalLeaderScreen.swift */; };
+		6E5E185D2805AEF200B3789C /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E185C2805AEF200B3789C /* PersonalViewController.swift */; };
 		6EEE5CF0280461340031B4B9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE5CEF280461340031B4B9 /* FirebaseAnalytics */; };
 		6EEE5CF2280461340031B4B9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE5CF1280461340031B4B9 /* FirebaseAuth */; };
 		6EEE5CF4280461340031B4B9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEE5CF3280461340031B4B9 /* FirebaseDatabase */; };
@@ -82,6 +85,9 @@
 		59FFFC39275824A700E1CD7A /* MasterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterClass.swift; sourceTree = "<group>"; };
 		59FFFC3D27583D3D00E1CD7A /* trollface-smile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "trollface-smile.mp3"; sourceTree = "<group>"; };
 		6E5E18562804DF7B00B3789C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E5E18582805AD4900B3789C /* CrazyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrazyCell.swift; sourceTree = "<group>"; };
+		6E5E185A2805AE9200B3789C /* personalLeaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personalLeaderScreen.swift; sourceTree = "<group>"; };
+		6E5E185C2805AEF200B3789C /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		5922BBCB2755565E0029079E = {
 			isa = PBXGroup;
 			children = (
+				6E5E18582805AD4900B3789C /* CrazyCell.swift */,
 				5922BBD62755565E0029079E /* FinalProject */,
 				5922BBF0275556600029079E /* FinalProjectTests */,
 				5922BBFA275556600029079E /* FinalProjectUITests */,
@@ -140,6 +147,8 @@
 				5922BBD72755565E0029079E /* AppDelegate.swift */,
 				5922BBD92755565E0029079E /* SceneDelegate.swift */,
 				5922BBDD2755565E0029079E /* Main.storyboard */,
+				6E5E185C2805AEF200B3789C /* PersonalViewController.swift */,
+				6E5E185A2805AE9200B3789C /* personalLeaderScreen.swift */,
 				24C9647A27FDC14C00F5337F /* LeaderboardViewController.swift */,
 				24C9647C27FDC85A00F5337F /* PlayerScore.swift */,
 				5922BBDB2755565E0029079E /* ViewController.swift */,
@@ -332,11 +341,14 @@
 				5922BC1327555A830029079E /* HowToPlayController.swift in Sources */,
 				5922BC1727555AAD0029079E /* ShopController.swift in Sources */,
 				5922BBD82755565E0029079E /* AppDelegate.swift in Sources */,
+				6E5E185D2805AEF200B3789C /* PersonalViewController.swift in Sources */,
+				6E5E185B2805AE9200B3789C /* personalLeaderScreen.swift in Sources */,
 				5922BBE22755565E0029079E /* FinalProject.xcdatamodeld in Sources */,
 				592888012757F8490011F42F /* CustomCell.swift in Sources */,
 				24C9647D27FDC85A00F5337F /* PlayerScore.swift in Sources */,
 				59FFFC3A275824A700E1CD7A /* MasterClass.swift in Sources */,
 				5922BBDA2755565E0029079E /* SceneDelegate.swift in Sources */,
+				6E5E18592805AD4900B3789C /* CrazyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
