@@ -22,7 +22,6 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
         
-       // self.tableView.reloadData()
 
         
     }
@@ -30,9 +29,6 @@ class LeaderboardViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         tableViewOutlet.reloadData()
-        
-        
-        
     }
     
     
