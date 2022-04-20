@@ -3,7 +3,7 @@ import AVFoundation
 import Firebase
 import FirebaseFirestoreSwift
 class GameController: UIViewController {
-    
+    //test
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var aoutlet: UIButton!
