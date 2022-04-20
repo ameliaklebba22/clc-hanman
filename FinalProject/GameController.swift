@@ -87,8 +87,53 @@ class GameController: UIViewController {
                self.wordBank = wordBankk
                self.settingUp()
            }
+           
+           
+           let peopleReff = database.document("people/players")
+           peopleReff.getDocument { snapshot, error in
+           guard let data = snapshot?.data(), error == nil else{
+           return
+           }
+           guard let text = data["leaders"] as? [String] else {
+           return
+           }
+               GameController.people = text
+               
+           }
+           
+           
+           let scoreReff = database.document("score/streaks")
+           scoreReff.getDocument { snapshot, error in
+           guard let data = snapshot?.data(), error == nil else{
+           return
+           }
+           guard let text = data["awesome"] as? [Int] else {
+           return
+           }
+               GameController.scores = text
+               
+           }
+           
+           print("amt of scire")
+           
+           print(GameController.scores.count)
+           
+           
+           
+           
+           
+           
            }
        
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func settingUp(){
 
@@ -828,6 +873,13 @@ class GameController: UIViewController {
                 }
                 let person = fields[0]
                 GameController.people.append(person.text!)
+                
+        
+                let peopleRef = database.document("people/players")
+                    peopleRef.updateData(["leaders": GameController.people])
+                    
+                
+                
             }))
         
         
@@ -890,11 +942,8 @@ class GameController: UIViewController {
             
         
             
-        let peopleRef = database.document("people/players")
-            peopleRef.setData(["leaders": GameController.people])
-            
         let scoreRef = database.document("score/streaks")
-            scoreRef.setData(["awesome": GameController.scores])
+            scoreRef.updateData(["awesome": GameController.scores])
             
             
             
