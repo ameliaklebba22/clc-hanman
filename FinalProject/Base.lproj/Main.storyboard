@@ -687,6 +687,9 @@
                         <viewLayoutGuide key="safeArea" id="jEP-vl-baA"/>
                         <color key="backgroundColor" red="1" green="0.54552355350000004" blue="0.2855485995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <connections>
+                        <outlet property="personalTableViewOutlet" destination="ndn-NX-3qk" id="H1Z-Ys-EYf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uN-HW-DeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
