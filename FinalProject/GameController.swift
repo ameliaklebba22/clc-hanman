@@ -3,7 +3,7 @@ import AVFoundation
 import Firebase
 import FirebaseFirestoreSwift
 class GameController: UIViewController {
-    
+    //test
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var aoutlet: UIButton!
@@ -75,11 +75,6 @@ class GameController: UIViewController {
        super.viewDidLoad()
            
            
-//           let peopleRef = database.document("word/words")
-//           peopleRef.updateData(["allWords": WORDS])
-           
-           
-           
            
            let docRef = database.document("word/words")
            docRef.getDocument { snapshot, error in
@@ -92,11 +87,56 @@ class GameController: UIViewController {
                self.wordBank = wordBankk
                self.settingUp()
            }
+           
+           
+           let peopleReff = database.document("people/players")
+           peopleReff.getDocument { snapshot, error in
+           guard let data = snapshot?.data(), error == nil else{
+           return
+           }
+           guard let text = data["leaders"] as? [String] else {
+           return
+           }
+               GameController.people = text
+               
+           }
+           
+           
+           let scoreReff = database.document("score/streaks")
+           scoreReff.getDocument { snapshot, error in
+           guard let data = snapshot?.data(), error == nil else{
+           return
+           }
+           guard let text = data["awesome"] as? [Int] else {
+           return
+           }
+               GameController.scores = text
+               
+           }
+           
+           print("amt of scire")
+           
+           print(GameController.scores.count)
+           
+           
+           
+           
+           
+           
            }
        
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func settingUp(){
-        
+
         var num = Int.random(in: 0..<wordBank.count)
         chosen = wordBank[num]
         print("this is the word")
@@ -173,10 +213,6 @@ class GameController: UIViewController {
     
     
        @IBAction func abutton(_ sender: UIButton) {
-           
-//           let scoreRef = database.document("word/words")
-//           scoreRef.setData(["allWords": wordBank])
-//           print("hello")
            var col  = false
            var loopAmt = 0
            for poo in special{
@@ -199,10 +235,6 @@ class GameController: UIViewController {
            }
            callWin()
            callLoss()
-           
-        
-        
-           
        }
        
        @IBAction func bbutton(_ sender: Any) {
@@ -834,13 +866,20 @@ class GameController: UIViewController {
       
     //winning alert
     func alertMoment(){
-        let alert = UIAlertController(title: "You Win!", message: "Enter your name to send score to global leader board.", preferredStyle: .alert);            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "You Lost Your Streak!", message: "Enter your name to send your streak to global leader board.", preferredStyle: .alert);            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Send", style: .default, handler: { [self] ale in
                 guard let fields = alert.textFields, fields.count == 1 else{
                 return
                 }
                 let person = fields[0]
                 GameController.people.append(person.text!)
+                
+        
+                let peopleRef = database.document("people/players")
+                    peopleRef.updateData(["leaders": GameController.people])
+                    
+                
+                
             }))
         
         
@@ -854,20 +893,6 @@ class GameController: UIViewController {
         
         }
         
-    
-    
-    
-    
-    
-    
-    
-    func otherAlertMoment(){
-        let epic = UIAlertController(title: "You got the word wrong.", message: "You didn't guess the word. The word was \(chosen) wait untill tomrrow to try again! " , preferredStyle: .alert)
-        let gamer = UIAlertAction(title: "Okay", style: .default, handler: nil)
-        epic.addAction(gamer)
-        present(epic, animated: true, completion: nil)
-        resetScreen()
-        }
     
     
       //making array of characters
@@ -904,18 +929,30 @@ class GameController: UIViewController {
         print(chosen.count)
         if correct == chosen.count{
         total = total + 1
-        GameController.scores.append(total)
         scoreLabel.text = String(total)
-        alertMoment()
-        }
-    }
-    func callLoss(){
-        print("inside")
-        if wrong == 5{
-        otherAlertMoment()
+        resetScreen()
         }
     }
     
+    func callLoss(){
+        print("inside")
+        if wrong == 5{
+        GameController.scores.append(total)
+        alertMoment()
+            
+        
+            
+        let scoreRef = database.document("score/streaks")
+            scoreRef.updateData(["awesome": GameController.scores])
+            
+            
+            
+            
+            
+        total = 0
+        scoreLabel.text = String(total)
+        }
+    }
     
     //changing person
     func changePerson(wrongg: Int){
@@ -954,7 +991,6 @@ class GameController: UIViewController {
         o = o + 1
         }
         guessLabel.text = setup
-//        poleOutletFun.image = UIImage(named: "blank")
         aoutlet.backgroundColor = UIColor.black
         boutlet.backgroundColor = UIColor.black
         coutlet.backgroundColor = UIColor.black
