@@ -27,7 +27,12 @@ class PersonalViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = personalTableViewOutlet.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        
+        
+        
+        return cell
     }
  
 }
+
